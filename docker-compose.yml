@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  database:
+    image: postgres
+    container_name: expenses-database
+    environment:
+      POSTGRES_PASSWORD: expenses123
+      POSTGRES_USER: expenses
+      POSTGRES_DB: expenses
+    ports:
+      - "5432:5432"
