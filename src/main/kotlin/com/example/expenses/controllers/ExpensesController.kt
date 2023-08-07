@@ -1,21 +1,27 @@
 package com.example.expenses.controllers
 
+import com.example.expenses.entities.Expense
+import com.example.expenses.repositories.ExpensesRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class ExpensesController {
+class ExpensesController(@Autowired private var repository: ExpensesRepository) {
 
     @GetMapping("/expenses")
-    fun expenses(): String {
-        println("It has arrived with GET =================")
-        return "OK 200"
+    fun expenses(): Iterable<Expense> {
+        return repository.findAll()
     }
 
     @PostMapping("/expenses")
-    fun createExpenses(): String {
-        println("A new expense has created")
-        return "A new expense has created"
+    fun createExpenses(): Expense {
+        return repository.save(
+            Expense(
+                amount = 10.0,
+                description = "Beer with friends"
+            )
+        )
     }
 }
