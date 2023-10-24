@@ -1,5 +1,6 @@
-package com.example.expenses.controllers
+package com.example.expenses.api.http.v1
 
+import com.example.expenses.api.http.v1.requests.ExpenseRequest
 import com.example.expenses.entities.Expense
 import com.example.expenses.repositories.ExpensesRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,7 +19,7 @@ class ExpensesController(@Autowired private var repository: ExpensesRepository) 
     }
 
     @PostMapping("/expenses", consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun createExpenses(@RequestBody expense: ExpenseRequestBody): Expense {
+    fun createExpenses(@RequestBody expense: ExpenseRequest):Expense {
         return repository.save(
             Expense(
                 amount = expense.amount,
@@ -28,7 +29,3 @@ class ExpensesController(@Autowired private var repository: ExpensesRepository) 
     }
 }
 
-data class ExpenseRequestBody(
-    var amount: Double,
-    var description: String
-)
