@@ -1,4 +1,4 @@
-package com.example.expenses.repositories
+package com.example.expenses.infra.repositories.jpa
 
 import com.example.expenses.entities.Expense
 import org.springframework.data.repository.CrudRepository

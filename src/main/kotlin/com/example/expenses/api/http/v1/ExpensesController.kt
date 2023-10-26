@@ -2,7 +2,7 @@ package com.example.expenses.api.http.v1
 
 import com.example.expenses.api.http.v1.requests.ExpenseRequest
 import com.example.expenses.entities.Expense
-import com.example.expenses.entities.ExpensesRepo
+import com.example.expenses.entities.ExpensesRepository
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class ExpensesController(private val repository: ExpensesRepo) {
+class ExpensesController(private val repository: ExpensesRepository) {
 
     @GetMapping("/expenses")
     fun expenses(): Iterable<Expense> {

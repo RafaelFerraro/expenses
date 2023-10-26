@@ -1,12 +1,13 @@
-package com.example.expenses.repositories
+package com.example.expenses.infra.repositories.expenses
 
 import com.example.expenses.entities.Expense
-import com.example.expenses.entities.ExpensesRepo
+import com.example.expenses.entities.ExpensesRepository
+import com.example.expenses.infra.repositories.jpa.JpaExpensesRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class ExpensesRepoImpl : ExpensesRepo {
+class ExpensesRepositoryImpl : ExpensesRepository {
     @Autowired
     lateinit var jpaExpensesRepository: JpaExpensesRepository;
 

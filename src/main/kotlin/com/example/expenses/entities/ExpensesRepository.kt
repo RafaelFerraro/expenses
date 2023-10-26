@@ -1,6 +1,6 @@
 package com.example.expenses.entities
 
-interface ExpensesRepo {
+interface ExpensesRepository {
     fun create(expense: Expense): Expense
     fun findAll(): MutableIterable<Expense>
 }
