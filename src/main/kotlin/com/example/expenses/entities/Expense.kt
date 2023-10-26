@@ -12,7 +12,7 @@ import java.util.UUID
 
 @Entity
 @Table(name = "expenses")
-class Expense(
+data class Expense(
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     var id: UUID = UUID.randomUUID(),
     var amount: Double,
