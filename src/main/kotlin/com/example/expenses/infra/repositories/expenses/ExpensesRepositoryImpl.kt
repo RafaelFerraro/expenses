@@ -4,9 +4,9 @@ import com.example.expenses.entities.Expense
 import com.example.expenses.entities.ExpensesRepository
 import com.example.expenses.infra.repositories.jpa.JpaExpensesRepository
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Repository
 
-@Service
+@Repository
 class ExpensesRepositoryImpl : ExpensesRepository {
     @Autowired
     lateinit var jpaExpensesRepository: JpaExpensesRepository;
