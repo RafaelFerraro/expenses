@@ -1,4 +1,4 @@
-package com.example.expenses.entities
+package com.example.expenses.domain.expenses
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

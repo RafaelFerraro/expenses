@@ -1,4 +1,4 @@
-package com.example.expenses.entities
+package com.example.expenses.domain.expenses
 
 interface ExpensesRepository {
     fun create(expense: Expense): Expense

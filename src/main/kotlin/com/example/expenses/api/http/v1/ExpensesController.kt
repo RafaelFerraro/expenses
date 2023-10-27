@@ -1,8 +1,8 @@
 package com.example.expenses.api.http.v1
 
 import com.example.expenses.api.http.v1.requests.ExpenseRequest
-import com.example.expenses.entities.Expense
-import com.example.expenses.entities.ExpensesRepository
+import com.example.expenses.domain.expenses.Expense
+import com.example.expenses.domain.expenses.ExpensesRepository
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -18,7 +18,7 @@ class ExpensesController(private val repository: ExpensesRepository) {
     }
 
     @PostMapping("/expenses", consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun createExpenses(@RequestBody expense: ExpenseRequest):Expense {
+    fun createExpenses(@RequestBody expense: ExpenseRequest): Expense {
         return repository.create(
             Expense(
                 amount = expense.amount,
