@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Repository
 
 @Repository
-class ExpensesRepositoryImpl : ExpensesRepository {
-    @Autowired
-    lateinit var jpaExpensesRepository: JpaExpensesRepository;
+class ExpensesRepositoryImpl(
+    @Autowired private val jpaExpensesRepository: JpaExpensesRepository
+) : ExpensesRepository {
 
     override fun create(expense: Expense): Expense {
         return jpaExpensesRepository.save(expense)
